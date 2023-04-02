@@ -75,8 +75,8 @@ const connectDB = async () => {
  */
 // an api call to submit a new joke
 app.post('/submit-joke', cors(corsOptions),async (req,res) => {
-    const {description2,type} = req.body;
-    await Jokes_model.collection.insertOne({description: description2,type: type})
+    const {description,type} = req.body;
+    await Jokes_model.collection.insertOne({description: description,type: type})
     .then(result => {
         res.status(201).json(result)
     })
